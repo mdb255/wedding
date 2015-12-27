@@ -17,12 +17,14 @@ See the front-end project here: https://github.com/mdb255/wedding-ui
 * Update the pom.xml and hibernate.cfg.xml in this project with appropriate DB connection config
 * Create a Maven run configuration from the _wedding-domain_ project with goal _compile flyway:migrate_
 * Run this build to create the required tables and seed initial data
+
 #### Web application
 * In Eclipse choose _New > Other > Server_ and add a Tomcat Server
 * Include both the wedding-ws and wedding-ws-test applications
 * In the Servers view, double-click the _localhost_ server to edit, and change the HTTP port to 8080
 * Run the Tomcat server and browse to http://localhost:8090/#/registry?category=transportation to test the Registry
 
+## Misc
 ##### Disclaimers:
 * Has not been reviewed for security issues and should not be used for sensitive data
 
