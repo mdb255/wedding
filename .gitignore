@@ -1,0 +1,9 @@
+# Eclipe
+.project
+.classpath
+.settings/
+.metadata/
+
+# Output dirs
+target/
+build/

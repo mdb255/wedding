@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  
+  <!-- Simple file output -->
+  <appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${log.path}WEDDING.${spring.profiles.active}.log</file>
+    <append>true</append>
+    
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+    	<fileNamePattern>${log.path}WEDDING.${spring.profiles.active}.log.%i</fileNamePattern>
+    	<MinIndex>0</MinIndex>
+    	<MaxIndex>9</MaxIndex>
+    </rollingPolicy>
+    
+    <!-- whenever the file size reaches 64 MB -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+		<maxFileSize>64MB</maxFileSize>
+	</triggeringPolicy>
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="rolling" />
+  </root>
+  
+</configuration>
